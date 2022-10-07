@@ -1,0 +1,2 @@
+#!/bin/bash
+chmod 001 dir0 dir1 dir2
