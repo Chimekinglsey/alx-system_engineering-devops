@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Reserve" |rev
+echo "Reserve" | rev
