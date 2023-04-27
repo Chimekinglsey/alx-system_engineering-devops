@@ -1,0 +1,1 @@
+We are digging deeper into some shell operations on files like sed, cut and other basic repetitive operations like while, for and until loops. We also touched if conditional statement and the enclosing fi (finish).
