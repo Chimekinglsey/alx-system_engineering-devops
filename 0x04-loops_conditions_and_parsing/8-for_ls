@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# new  talks
+ls | cat -d "-" -f 2 | sort
