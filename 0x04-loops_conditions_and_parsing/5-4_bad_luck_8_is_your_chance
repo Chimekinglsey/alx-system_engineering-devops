@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 # This script loops 10 times displaying bad luck, good luck and Best School
-i=11
-while((i>1))
+i=0
+while((i < 10))
 	do
-		if [[ $i == 4 ]]
+		if [[ $i == 3 ]]
 		then
 			echo "bad luck"
-		elif [[ $i == 8 ]]
+		elif [[ $i == 7 ]]
 		then
 			echo "good luck"
 		else
 			echo "Best School"
 		fi
-		((i--))
+		((i++))
 done
