@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+for ((i=0; i<10; i++))
+	do
+		if [[ ! $i == 8 ]]
+		then
+			echo "Best School"
+		else
+			echo "Hi"
+		fi
+done
