@@ -1,0 +1,1 @@
+A process is an instance of a program that is executing. An instance in the sense that a program can have two instances executing at the same time with different PID (unique process identification number). We are looking at processes commands in linux such as ps, top, pgrep, pkill, kill, trap, and exit.
