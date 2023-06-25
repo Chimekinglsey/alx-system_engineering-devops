@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 # This script an RSA key pair named `school` with passphrase  `betty`
-cat ~/.ssh/school | ssh ubuntu@52.91.182.217 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+Host 52.91.182.217
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
+
