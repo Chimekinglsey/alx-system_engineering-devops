@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+cat ./add_ssh | ssh ubuntu@52.91.182.217 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
