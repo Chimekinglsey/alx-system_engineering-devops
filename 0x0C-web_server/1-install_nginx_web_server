@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this  script overrides the default nginx welcome html page
+ssh ubuntu@52.91.182.217
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
