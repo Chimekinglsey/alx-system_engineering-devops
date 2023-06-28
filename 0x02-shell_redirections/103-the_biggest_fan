@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Read input logs from stdin
+logs=$(cat)
+
+# Extract hosts from logs and count their occurrences
+host_counts=$(echo "$logs" | awk 'NR > 1 {print $1}' | sort | uniq -c | sort -nr)
+
+# Get the 11 most active hosts
+most_active_hosts=$(echo "$host_counts" | head -n 11 | awk '{print $2}')
+
+# Print the most active hosts
+echo "$most_active_hosts"
+
