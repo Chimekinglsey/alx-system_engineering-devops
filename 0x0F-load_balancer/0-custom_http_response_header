@@ -2,5 +2,5 @@
 # this  script creates a header in nginx config file
 sudo apt-get update -y
 sudo apt-get install nginx -y
-sudo sed -i "16i \\\tadd_header X-Served-By $hostname;" /etc/nginx/nginx.conf
+sudo sed -i "16i \\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
 sudo service nginx restart
