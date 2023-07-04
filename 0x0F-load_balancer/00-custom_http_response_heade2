@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# this  script creates a header in nginx config file
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install nginx -y
+sudo service nginx start
+sudo ufw allow 'Nginx HTTP'
+sudo ufw allow 'Nginx HTTPS'
+sudo ufw allow 'OpenSSH'
+sudo ufw enable
+sudo service nginx restart
+sudo service nginx reload
