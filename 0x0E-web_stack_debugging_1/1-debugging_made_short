@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# Configure container to listen at 80 for all ipv4 requests
+# Configure container to listen at 80 for all ipv4 requests in 5 lines
 sudo ln -f /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
-service nginx restart
+service nginx reload
+service nginx stop
