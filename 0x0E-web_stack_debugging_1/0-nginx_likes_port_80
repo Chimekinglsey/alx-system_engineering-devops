@@ -1,10 +1,10 @@
 #!/bin/env bash
 apt install nginx -y
-server = "
+server="
 	server {
 		listen 80;
 		}
 "
-sed -i '/http {/a\' "$server" /etc/nginx/nginx.conf
+sed -i '/^http {/a\' "$server" /etc/nginx/nginx.conf
 service nginx restart
 
