@@ -1,10 +1,5 @@
-#!/bin/env bash
-apt install nginx -y
-server="
-	server {
-		listen 80;
-		}
-"
-sed -i '/^http {/a'\' "$server" /etc/nginx/nginx.conf
+#!/usr/bin/env bash
+# Fixing issues in a container
+cp -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
 
