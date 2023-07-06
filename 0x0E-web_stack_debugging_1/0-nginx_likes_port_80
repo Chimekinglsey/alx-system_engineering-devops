@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Fixing issues in a container
-server=echo "server {listen 80;}" 
-$server | sudo tee -a /etc/nginx/sites-available/default
+server="server {listen 80;}" 
+echo "$server" | sudo tee -a /etc/nginx/sites-available/default
 service nginx restart
