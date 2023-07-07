@@ -19,21 +19,33 @@ defaults
     option  forwardfor
     option  http-server-close
 
+frontend http-redirect
+    bind   *:80
+    mode   http
+    redirect scheme https code 301 if !{ ssl_fc }
+
+frontend https
+    bind   *:443 ssl crt /etc/haproxy/certs/www.bdbnb.site.pem
+    mode   http
+    # Add your existing frontend configuration for HTTPS traffic here
+
 frontend www-http
-    bind   0.0.0.0:80
+    bind   *:80
+    mode   http
     reqadd X-Forwarded-Proto:\ http
     default_backend www-backend
     redirect scheme https code 301 if !{ ssl_fc }
 
 frontend www-https
-    bind   0.0.0.0:443 ssl crt /etc/haproxy/certs/www.bdbnb.site.pem
+    bind   *:443 ssl crt /etc/haproxy/certs/www.bdbnb.site.pem
+    mode   http
     reqadd X-Forwarded-Proto:\ https
     acl    letsencrypt-acl path_beg /.well-known/acme-challenge/
     use_backend letsencrypt-backend if letsencrypt-acl
     default_backend www-backend
 
 backend www-backend
-    balance  roundrobin
+    balance roundrobin
     redirect scheme https if !{ ssl_fc }
     server 180489-web-01 54.160.112.160:80 check
     server 180489-web-02 54.144.86.206:80 check
