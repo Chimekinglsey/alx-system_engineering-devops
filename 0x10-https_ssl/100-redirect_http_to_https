@@ -19,10 +19,10 @@ defaults
     option  forwardfor
     option  http-server-close
 
-frontend spaced
+frontend www-http
     bind   0.0.0.0:80
     reqadd X-Forwarded-Proto:\ http
-    default_backend backend_spacedigit
+    default_backend www-backend
     redirect scheme https code 301 if !{ ssl_fc }
 
 frontend www-https
@@ -30,9 +30,9 @@ frontend www-https
     reqadd X-Forwarded-Proto:\ https
     acl    letsencrypt-acl path_beg /.well-known/acme-challenge/
     use_backend letsencrypt-backend if letsencrypt-acl
-    default_backend backend_spacedigit
+    default_backend www-backend
 
-backend backend_spacedigit
+backend www-backend
     balance  roundrobin
     redirect scheme https if !{ ssl_fc }
     server 180489-web-01 54.160.112.160:80 check
@@ -40,3 +40,4 @@ backend backend_spacedigit
 
 backend letsencrypt-backend
     server letsencrypt 127.0.0.1:54321
+
