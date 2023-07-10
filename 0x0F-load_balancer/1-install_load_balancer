@@ -13,17 +13,4 @@ echo "frontend spaced
         server 180489-web-01 54.152.132.85:80 check
         server 180489-web-02 54.144.86.206:80 check
 " >> /etc/haproxy/haproxy.cfg
-
-
-#echo "ENABLED=1" > /etc/default/haproxy
-
-#echo "  listen loadbalancer
-#        bind *:80
-#        mode http
-#        balance roundrobin
-#        option httpclose
-#        option forwardfor
-#        server 180489-web-01 54.152.132.85:80 check
-#        server 180489-web-02 54.144.86.206:80 check
-#" >> /etc/haproxy/haproxy.cfg
 sudo service haproxy start
