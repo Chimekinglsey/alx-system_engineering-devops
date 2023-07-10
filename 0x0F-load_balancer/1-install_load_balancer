@@ -16,4 +16,4 @@ echo "  listen loadbalancer
         server 180489-web-01 54.152.132.85:80 check
         server 180489-web-02 54.144.86.206:80 check
 " >> /etc/haproxy/haproxy.cfg
-sudo service haproxy restart
+sudo service haproxy start
