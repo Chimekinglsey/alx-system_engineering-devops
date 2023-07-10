@@ -11,8 +11,9 @@ echo "frontend spaced
         default_backend web-backend
     backend web-backend
         balance roundrobin
-        server webserver1 54.160.112.160
-        server webserver2 54.144.86.206" >> /etc/haproxy/haproxy.cfg
+        server 180489-web-01 54.152.132.85
+        server 180489-web-02 54.144.86.206" >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
 sudo service haproxy reload
+
