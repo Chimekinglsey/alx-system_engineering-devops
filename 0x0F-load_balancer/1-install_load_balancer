@@ -2,9 +2,12 @@
 #Configure HAProxy load balancer server using script
 sudo apt-get -y update
 sudo apt-get install --no-install-recommends software-properties-common
-yes | sudo add-apt-repository ppa:vbernat/haproxy-2.8
-yes | sudo apt-get install haproxy=2.8.\*
-yes | sudo apt-get -y install haproxy=1.8.\*
+add-apt-repository ppa:vbernat/haproxy-2.8
+apt-get install haproxy=2.8.\*
+apt-get -y install haproxy=1.8.\*
+
+echo "ENABLED=1" > /etc/default/haproxy
+
 echo "frontend spaced
         bind *:80
         mode http
