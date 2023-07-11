@@ -1,0 +1,120 @@
+body {
+	background-color:#e5e4d7;
+	font-size: 20px;
+	font-family:georgia,tohoma,candara,impact;
+	line-height: 1.4;
+	opacity: 100%;
+	margin: 10px;
+	overflow: auto;
+}
+body h1 {
+	text-align: center;
+}
+
+.p2 {
+	opacity: 0.75;
+	user-select: none;
+}
+.overflow {
+	display: inline block;
+	float: left;
+	border: 2px solid #ddd;
+	border-radius: 3.5px 0 3.5px 0;
+	width: 32%;
+	height: 200px;
+	margin-bottom: 20px;
+	padding:0.5%;
+	background-color: #ccc;
+		overflow: auto;
+}
+
+.padmargin {
+	margin: 20px;
+	padding: 20px;
+}
+.shift {
+	margin: 5px;
+}
+.font-variant {
+	font-variant: small-caps;
+}
+.long {
+	clear:both;
+	line-height: 1.4em;
+	opacity: 100;
+	letter-spacing: 0;
+	background-color: #eee;
+	user-select: text;
+}
+.position {
+	display: inline-block;
+	border: 2px solid blue;
+	border-radius: 5px;
+	width: 290px;
+	margin: 5px;
+	padding: 5px;
+	height: 600px;
+	line-height: 125%;
+	overflow: auto;
+	background-color: silver;
+}
+.table {
+	height: 400px;
+	width: 100%;
+	background-color: darkgreen;
+	border: 2px black solid;
+	border-radius: 5px;
+	display: table;
+	position:relative;
+	margin: 10px 10px 20px 0px;
+}
+form .form {
+	display: table-row;
+	line-height: 0px;
+	
+	}
+form label {
+	display: table-cell;
+	color: white;
+	text-align: center;
+	width: 25px;
+	margin: 10px;
+	margin-top: 0px;
+	height: 30px;
+	padding: 5px;
+}
+form input {
+	display: table-cell;
+	margin-top: 0px;
+	}
+footer {
+	height: 60px;
+	display: block;
+	background-color: darkgreen;
+	vertical-align: middle;
+	width: 100%;
+	text-align: center;
+	border-radius: 5px;
+	border: 2px black solid;
+	position: static;
+	bottom: 10px;
+	}
+footer a {
+	display: inline-block;
+	height: 40px;
+	width: 200px;
+	padding: 2px;
+	margin: 6.5px 20px 0 0;
+	vertical-align: middle;
+	text-align: center;
+	text-decoration: none;
+	background-color:silver;
+	color: black;
+	border: 2px black solid;
+	border-radius: 5px;
+}
+footer a:hover {
+	background-color: white;
+	transition: 30ms;
+	cursor: hand;
+}
