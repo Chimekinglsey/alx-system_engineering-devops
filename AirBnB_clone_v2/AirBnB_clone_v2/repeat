@@ -1,8 +1,0 @@
-#!/usr/bin/bash
-file=$1
-i=1
-while [ $2 -gt $i ] 
-do
-    echo "Lagos is a rainy state" >> $file
-    ((i++))
-done
