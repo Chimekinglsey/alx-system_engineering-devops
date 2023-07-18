@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Fix a broken nginx container to listen for all ports at 8080
-pkill apache2
+sudo service nginx stop
 chown nginx /etc/nginx/nginx.conf
 chmod u+r /etc/nginx/nginx.conf
 sed -i "s/80/8080/g" /etc/nginx/sites-available/default
