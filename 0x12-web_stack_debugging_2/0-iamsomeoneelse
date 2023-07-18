@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # This script takes an argument and returns it
-if [ $# -gt 0  ]
-	then
+#if [ $# -gt 0  ]
+#	then
 		sudo -u "$1" whoami
-fi
+#fi
