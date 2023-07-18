@@ -2,5 +2,5 @@
 # This script takes an argument and returns it
 if [ $# -gt 0  ]
 	then
-		echo "$1"
+		sudo -u "$1" whoami
 fi
