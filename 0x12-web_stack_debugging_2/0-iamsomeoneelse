@@ -1,7 +1,3 @@
 #!/usr/bin/env bash
-# This script takes an argument and runs `whoami` on` it
-if [ $# -gt 0  ]
-	then
-		sudo -u "$1" whoami
-fi
-
+# Run the whoami command under the user passed as an argument
+sudo -u "$1" whoami
