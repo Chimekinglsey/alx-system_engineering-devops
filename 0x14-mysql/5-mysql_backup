@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # A script that creates a backup of all databases
-if [ $# -ne 1 ]; then; 
+if [ $# -ne 1 ]; then
 	echo "Usage: $0 <mysql_root_password>"
 	exit 1 
 fi
