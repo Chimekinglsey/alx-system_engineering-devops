@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # A script that creates a backup of all databases
-if [ $# -ne 1 ]; then; exit 1; fi
+if [ $# -ne 1 ]; then; 
+	echo "Usage: $0 <mysql_root_password>"
+	exit 1 
+fi
 mysqldump -u root -p"$1" --all-databases > backup.sql
 current_date=$(date +'%d-%m-%Y')
 tar -czf "$current_date.tar.gz" backup.sql
