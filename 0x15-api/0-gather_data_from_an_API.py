@@ -23,8 +23,8 @@ if __name__ == '__main__':
             tasks_completed += 1
             task_title.append(user['title'])
     for name in users:
-            if emp_id == name['id']:
-                emp_name = name['name']
+        if emp_id == name['id']:
+            emp_name = name['name']
     print(f'Employee {emp_name} is done with tasks\
 ({tasks_completed}/{total_tasks}):')
     for item in task_title:
