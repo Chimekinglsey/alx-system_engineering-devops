@@ -17,15 +17,16 @@ if __name__ == '__main__':
     task_title = ""
 
     for user in users:
-            if emp_id == user['id']:
-                userName = user['username']
-                break
-        
+        if emp_id == user['id']:
+            userName = user['username']
+            break
+
     for task in todo:
         if emp_id == task['userId']:
             userId = task['userId']
             task_status = str(task['completed'])
             task_title = task['title']
-    
+
             with open('USER_ID.csv', 'a') as w:
-                w.write(f'"{userId}","{userName}","{task_status}","{task_title}"\n')
+                w.write(f'"{userId}","{userName}","{task_status}",\
+"{task_title}"\n')
