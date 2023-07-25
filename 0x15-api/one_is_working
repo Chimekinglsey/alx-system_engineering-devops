@@ -27,6 +27,6 @@ if __name__ == '__main__':
             task_status = str(task['completed'])
             task_title = task['title']
 
-            with open(f"{userId}.csv", 'a') as w:
+            with open("USER_ID.csv", 'a') as w:
                 w.write(f'"{userId}","{userName}","{task_status}",\
 "{task_title}"\n')
