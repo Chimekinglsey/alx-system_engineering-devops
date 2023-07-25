@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-0. Gather data from an API
+2. export json
 """
 
 import requests
@@ -21,12 +21,14 @@ if __name__ == '__main__':
             userName = user['username']
             break
 
+    tasks = []
     for task in todo:
         if emp_id == task['userId']:
             userId = task['userId']
             task_status = str(task['completed'])
             task_title = task['title']
+            tasks.append({'task': task_title, 'completed': task_status, 'username': userName})
 
-            with open("USER_ID.csv", 'a') as w:
-                w.write(f'"{userId}","{userName}","{task_status}",\
-"{task_title}"\n')
+    with open(f"{userId}.json", 'w') as w:
+        w.write("{{ '{}': {} }}".format(userId, tasks))
+
