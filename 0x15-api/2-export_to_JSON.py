@@ -3,6 +3,7 @@
 2. export json
 """
 
+import json
 import requests
 import sys
 
@@ -27,8 +28,8 @@ if __name__ == '__main__':
             userId = task['userId']
             task_status = str(task['completed'])
             task_title = task['title']
-            tasks.append({'task': task_title, 'completed': task_status, 'username': userName})
-
+            tasks.append({"task": task_title, "completed": task_status,\
+                         "username": userName})
+    dictionary = {userId: tasks}
     with open(f"{userId}.json", 'w') as w:
-        w.write("{{ '{}': {} }}".format(userId, tasks))
-
+        json.dump(dictionary, w)
