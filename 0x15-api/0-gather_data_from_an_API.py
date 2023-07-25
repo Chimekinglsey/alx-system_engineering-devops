@@ -17,15 +17,12 @@ if __name__ == '__main__':
     for user in todo:
         if user['userId'] == emp_id:
             total_tasks += 1
-    
+
     for user in todo:
-        if user['userId'] == emp_id and user['completed'] == True:
+        if user['userId'] == emp_id and user['completed']:
             tasks_completed += 1
             task_title.append(user['title'])
-    
-    # for name in users:
-    #     if name['id'] == emp_id:
-    #         emp_name = name['name']
+
     print(f'Employee {emp_name} is done with tasks\
 ({tasks_completed}/{total_tasks}):')
     for item in task_title:
