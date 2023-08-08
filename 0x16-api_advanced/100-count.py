@@ -5,7 +5,9 @@ all hot articles, and prints a sorted count of given keywords
 """
 import requests
 
+
 def count_words(subreddit, word_list):
+    """count wordlist"""
     url = f'https://www.reddit.com/r/{subreddit}/hot.json'
     headers = {"User-Agent": "RecursiveReddit/1.0"}
 
@@ -23,9 +25,11 @@ def count_words(subreddit, word_list):
             title = post.get('data').get('title')
             for word in word_list:
                 if f" {word.lower()} " in f" {title.lower()} ":
-                    word_count[word.lower()] = word_count.get(word.lower(), 0) + 1
+                    word_count[word.lower()] = \
+                                word_count.get(word.lower(), 0) + 1
 
-        sorted_results = sorted(word_count.items(), key=lambda x: (-x[1], x[0]))
+        sorted_results = sorted(word_count.items(),
+                                key=lambda x: (-x[1], x[0]))
         for word, count in sorted_results:
             print(f"{word}: {count}")
 
