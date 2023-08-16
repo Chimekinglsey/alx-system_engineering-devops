@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # This file serves from /airbnb-onepage/ route for our flask application
 server {
         listen 80;
