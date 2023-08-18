@@ -1,11 +1,12 @@
 # Increases the ulimit of nginx default to accommodate a high volume of requests
-file { '/etc/default/nginx':
-    ensure  => present,
-    content => "ULIMIT=\"-n 2048\"\n",
+exec {'replace':
+  provider => shell,
+  command  => 'sudo sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 4096\"/" /etc/default/nginx',
+  before   => Exec['restart'],
 }
 
-exec { 'reload_nginx':
-    command     => '/etc/init.d/nginx reload',
-    refreshonly => true,
-    require     => File['/etc/default/nginx'],
+exec {'restart':
+  provider => shell,
+  command  => 'sudo service nginx restart',
 }
+
