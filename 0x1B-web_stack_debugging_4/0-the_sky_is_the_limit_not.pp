@@ -1,11 +1,6 @@
 # increases the ulimit of nginx default to accommade high volume of requests
-exec {'replace':
-  provider => shell,
-  command  => 'sudo sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 4096\"/" /etc/default/nginx',
-  before   => Exec['restart'],
-}
 
-exec {'restart':
-  provider => shell,
-  command  => 'sudo service nginx restart',
+exec {'/etc/default/nginx':
+    path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+    command => "sed -i 's/ULIMIT=\"-n 15\"/ULIMIT=\"-n 2048\"' /etc/default/nginx"
 }
